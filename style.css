@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: cadetblue;
+}
+
+.container {
+  display: flex;
+  width: 520px;
+  height: 520px;
+  background-color: aliceblue;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 120px;
+  height: 120px;
+  background-color: tomato;
+  margin: 5px;
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
