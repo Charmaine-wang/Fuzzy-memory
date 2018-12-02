@@ -43,6 +43,14 @@ let previous, current;
 
 
 
+(function shuffle() {
+  cardElements.forEach(element => {
+    let ramdomPos = Math.floor(Math.random() * 16);
+    element.style.order = ramdomPos;
+  });
+})();
+
+
 cardElements.forEach((card, i) => {
   (card.dataset.id = i % length)
   image[i].setAttribute("src", (cards[i % length].img));
@@ -50,24 +58,7 @@ cardElements.forEach((card, i) => {
   card.addEventListener('click', handleClick);
 
 
-  function shuffle(cards) {
-    var currentIndex = cards.length,
-      temporaryValue, randomIndex;
 
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = cards[currentIndex];
-      cards[currentIndex] = cards[randomIndex];
-      cards[randomIndex] = temporaryValue;
-    }
-
-    return cards;
-  }
 
   function handleClick() {
     card.classList.add('clicked');
@@ -90,6 +81,7 @@ cardElements.forEach((card, i) => {
 
     }
   }
+
 
 
 })

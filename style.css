@@ -21,6 +21,10 @@ body {
   justify-content: center;
 }
 
+.card {
+  background-color: deeppink;
+}
+
 .image {
   width: 140px;
   height: 140px;
@@ -28,8 +32,4 @@ body {
 
 .matched {
   opacity: 0;
-}
-
-.clicked {
-  background-color: tomato;
 }
