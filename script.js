@@ -41,11 +41,33 @@ const image = [...document.querySelectorAll('.image')];
 const length = cards.length;
 let previous, current;
 
+
+
 cardElements.forEach((card, i) => {
   (card.dataset.id = i % length)
   image[i].setAttribute("src", (cards[i % length].img));
   const cardId = card.dataset.id;
   card.addEventListener('click', handleClick);
+
+
+  function shuffle(cards) {
+    var currentIndex = cards.length,
+      temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = cards[currentIndex];
+      cards[currentIndex] = cards[randomIndex];
+      cards[randomIndex] = temporaryValue;
+    }
+
+    return cards;
+  }
 
   function handleClick() {
     card.classList.add('clicked');
