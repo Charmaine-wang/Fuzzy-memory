@@ -38,14 +38,36 @@ const cards = [{
 
 const cardElements = [...document.querySelectorAll('.card')];
 const image = [...document.querySelectorAll('.image')];
-const length = cards.length
+const length = cards.length;
+let previous, current;
+
 cardElements.forEach((card, i) => {
   (card.dataset.id = i % length)
   image[i].setAttribute("src", (cards[i % length].img));
-
+  const cardId = card.dataset.id;
   card.addEventListener('click', handleClick);
 
   function handleClick() {
-    console.log('i was clicked' + card.dataset.id)
+    card.classList.add('clicked');
+    previous = current;
+    current = cardId;
+    if (previous == cardId) {
+      let matches = document.querySelectorAll(`[data-id="${previous}"]`);
+      matches.forEach((match) => {
+        match.classList.add('matched');
+        console.log('its a match');
+      })
+
+    } else if (previous !== cardId && current !== previous) {
+      let notMatches = document.querySelectorAll(`[data-id="${previous}"]`);
+      notMatches.forEach((notMatch) => {
+        notMatch.classList.remove('clicked')
+        console.log('not a match');
+      })
+
+
+    }
   }
+
+
 })

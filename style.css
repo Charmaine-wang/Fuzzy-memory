@@ -25,3 +25,11 @@ body {
   width: 140px;
   height: 140px;
 }
+
+.matched {
+  opacity: 0;
+}
+
+.clicked {
+  background-color: tomato;
+}
