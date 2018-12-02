@@ -1,37 +1,51 @@
 'use strict'
 const cards = [{
-    'name': 'bild1',
-    'img': 'images/donk.jpg'
+    id: 'bild1',
+    img: 'images/cat.jpeg'
   },
   {
-    'name': 'bild2',
-    'img': 'images/donk.jpg'
+    id: 'bild2',
+    img: 'images/cow.jpeg'
   },
   {
-    'name': 'bild3',
-    'img': 'images/donk.jpg'
+    id: 'bild3',
+    img: 'images/doggi.jpeg'
   },
   {
-    'name': 'bild4',
-    'img': 'images/donk.jpg'
+    id: 'bild4',
+    img: 'images/donk.jpg'
   },
   {
-    'name': 'bild5',
-    'img': 'images/donk.jpg'
+    id: 'bild5',
+    img: 'images/duck.jpeg'
   },
   {
-    'name': 'bild6',
-    'img': 'images/donk.jpg'
+    id: 'bild6',
+    img: 'images/leop.jpeg'
   },
   {
-    'name': 'bild7',
-    'img': 'images/donk.jpg'
+    id: 'bild7',
+    img: 'images/puppy.jpeg'
   },
   {
-    'name': 'bild8',
-    'img': 'images/donk.jpg'
+    id: 'bild8',
+    img: 'images/wild-animal.jpeg'
   },
 
 ];
 
-const fetchCard = document.getElementById('memory_board');
+
+
+const cardElements = [...document.querySelectorAll('.card')];
+const image = [...document.querySelectorAll('.image')];
+const length = cards.length
+cardElements.forEach((card, i) => {
+  (card.dataset.id = i % length)
+  image[i].setAttribute("src", (cards[i % length].img));
+
+  card.addEventListener('click', handleClick);
+
+  function handleClick() {
+    console.log('i was clicked' + card.dataset.id)
+  }
+})
