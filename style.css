@@ -7,13 +7,17 @@
   margin: 0;
 }
 
+h1 {
+  font-family: Arial;
+}
+
 title {
   display: none;
 }
 
 .game-board {
-  height: 90vh;
-  width: 70vw;
+  height: 80vh;
+  width: 60vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -50,6 +54,15 @@ title {
   transform: rotateY(180deg);
 }
 
-.restart-button {
-  align-items: flex-end;
+button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  cursor: pointer;
+  margin: 5px;
 }
