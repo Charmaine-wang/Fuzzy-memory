@@ -37,18 +37,15 @@ const images = [{
 function createCards(array, i) {
   return `
   <div class="card" data-id="">
-    <img class="default" src="./images/sheep.jpeg">
+    <img class="default" src="./images/peacock-feathers.jpg">
     <img class="flipped" src="">
   </div>
 
   <div class="card" data-id="">
-    <img class="default" src="./images/sheep.jpeg">
+    <img class="default" src="./images/peacock-feathers.jpg">
     <img class="flipped" src="">
   </div> `
 }
-//this loggar ut det den är i (eventlistner)
-
-
 
 //get big container in html
 const gameBoard = document.querySelector('.game-board');
@@ -65,11 +62,7 @@ let first, second;
 const cards = [...document.querySelectorAll('.card')];
 const flippedCards = [...document.querySelectorAll('.flipped')];
 
-
-
-
 shuffle(idArray);
-
 
 
 cards.forEach((card, i) => {
@@ -80,4 +73,8 @@ cards.forEach((card, i) => {
   let randomImage = images[randomNumber];
   flippedCards[i].setAttribute('src', randomImage.image);
   card.dataset.id = randomNumber;
+});
+
+document.getElementById("button").addEventListener("click", function() {
+  location.reload();
 });

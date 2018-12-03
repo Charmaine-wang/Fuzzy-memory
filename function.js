@@ -13,11 +13,10 @@ function shuffle(array) {
   return array;
 }
 
-function handleClick() {
 
+function handleClick() {
   if (disable || this === second) return
   this.classList.add('flip');
-
   if (!isFlipped) {
     isFlipped = true;
     first = this;
@@ -27,17 +26,15 @@ function handleClick() {
   first.dataset.id === second.dataset.id ? match() : noMatch();
 }
 
-function match() {
 
+function match() {
   first.removeEventListener('click', handleClick);
   second.removeEventListener('click', handleClick);
   clear();
 }
 
-
 function noMatch() {
   disable = true;
-
   setTimeout(() => {
     first.classList.remove('flip');
     second.classList.remove('flip');
