@@ -49,7 +49,7 @@ function createCards(array, i) {
 
 //get big container in html
 const gameBoard = document.querySelector('.game-board');
-
+const button = document.querySelector('.button')
 //loop through images array
 for (let i = 0; i < images.length; i++) {
   gameBoard.innerHTML += createCards(images, i);
@@ -61,20 +61,10 @@ let first, second;
 
 const cards = [...document.querySelectorAll('.card')];
 const flippedCards = [...document.querySelectorAll('.flipped')];
+restartGame();
 
 shuffle(idArray);
 
-
-cards.forEach((card, i) => {
-  //handleClick ny funktion längre upp.
-  card.addEventListener('click', handleClick);
-  let randomNumber = idArray[i];
-
-  let randomImage = images[randomNumber];
-  flippedCards[i].setAttribute('src', randomImage.image);
-  card.dataset.id = randomNumber;
-});
-
-document.getElementById("button").addEventListener("click", function() {
-  location.reload();
-});
+reload();
+button.addEventListener('click', restartGame);
+restartGame();
