@@ -1,3 +1,18 @@
+//function that will be in .game-board
+function createCards(array, i) {
+  return `
+  <div class="card" data-id="">
+    <img class="default" src="./images/peacock-feathers.jpg">
+    <img class="flipped" src="">
+  </div>
+
+  <div class="card" data-id="">
+    <img class="default" src="./images/peacock-feathers.jpg">
+    <img class="flipped" src="">
+  </div> `
+}
+
+
 //shuffel card
 function shuffle(array) {
   let currentIndex = array.length,
@@ -32,6 +47,7 @@ function match() {
   first.removeEventListener('click', handleClick);
   second.removeEventListener('click', handleClick);
   clear();
+
 }
 
 //if not a match, flip card
@@ -59,6 +75,8 @@ function reload() {
     let randomImage = images[randomNumber];
     flippedCards[i].setAttribute('src', randomImage.image);
     card.dataset.id = randomNumber;
+
+
   });
 }
 

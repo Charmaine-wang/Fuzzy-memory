@@ -34,24 +34,12 @@ const images = [{
 
 ];
 
-function createCards(array, i) {
-  return `
-  <div class="card" data-id="">
-    <img class="default" src="./images/peacock-feathers.jpg">
-    <img class="flipped" src="">
-  </div>
-
-  <div class="card" data-id="">
-    <img class="default" src="./images/peacock-feathers.jpg">
-    <img class="flipped" src="">
-  </div> `
-}
 
 //get big container in html
 const gameBoard = document.querySelector('.game-board');
 const button = document.querySelector('.button')
 
-//loop through images array
+//loop through images array into div .game-board
 for (let i = 0; i < images.length; i++) {
   gameBoard.innerHTML += createCards(images, i);
 }
@@ -62,6 +50,8 @@ let isFlipped, disable = false;
 let first, second;
 const cards = [...document.querySelectorAll('.card')];
 const flippedCards = [...document.querySelectorAll('.flipped')];
+
+
 
 shuffle(idArray);
 

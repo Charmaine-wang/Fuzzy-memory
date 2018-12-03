@@ -18,9 +18,9 @@ Memory game
 
 ## Tested
 
--   Lovisa Hallgren
--   Izabella Larsson
-
-## License
+-   [Lovisa Hallgren](https://github.com/lovisahallgren)
+-   [Izabella Larsson](https://github.com/izabellalarsson)
+-   [Nils Nathorst-Windahl](https://github.com/nattfrost)
+    ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Charmaine-wang/Fuzzy-memory/blob/master/LICENSE) file for details.
