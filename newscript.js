@@ -34,7 +34,7 @@ const images = [{
 
 ];
 
-const createCards = (array, i) => {
+function createCards(array, i) {
   return `
   <div class="card" data-id="">
     <img class="default" src="./images/sheep.jpeg">
@@ -47,39 +47,30 @@ const createCards = (array, i) => {
   </div> `
 }
 //this loggar ut det den är i (eventlistner)
-function handleClick() {
-  this.classList.add('flipped');
-}
-
-function shuffle(array) {
-  let currentIndex = array.length,
-    temporaryValue, randomIndex;
-
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
-}
 
 
 
+//get big container in html
 const gameBoard = document.querySelector('.game-board');
 
+//loop through images array
 for (let i = 0; i < images.length; i++) {
   gameBoard.innerHTML += createCards(images, i);
 }
 const idArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]
-
-
+let isFlipped, disable = false;
+let first, second;
 //spread operator
+
 const cards = [...document.querySelectorAll('.card')];
 const flippedCards = [...document.querySelectorAll('.flipped')];
+
+
+
+
 shuffle(idArray);
+
+
 
 cards.forEach((card, i) => {
   //handleClick ny funktion längre upp.
