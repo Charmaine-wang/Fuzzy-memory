@@ -2,34 +2,34 @@
 
 const images = [{
 
-    image: 'images/cat.jpeg'
+    image: 'images/animal.jpg'
   },
   {
-    image: 'images/cow.jpeg'
-  },
-  {
-
-    image: 'images/doggi.jpeg'
+    image: 'images/frog.jpg'
   },
   {
 
-    image: 'images/donk.jpg'
+    image: 'images/iguana.jpg'
   },
   {
 
-    image: 'images/duck.jpeg'
+    image: 'images/pappag.jpeg'
   },
   {
 
-    image: 'images/leop.jpeg'
+    image: 'images/jellyfish.jpg'
   },
   {
 
-    image: 'images/puppy.jpeg'
+    image: 'images/jellyfish-blue.jpg'
   },
   {
 
-    image: 'images/wild-animal.jpeg'
+    image: 'images/fish.jpg'
+  },
+  {
+
+    image: 'images/toucan.jpg'
   }
 
 ];
