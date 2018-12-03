@@ -78,17 +78,15 @@ const idArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7]
 
 //spread operator
 const cards = [...document.querySelectorAll('.card')];
-
+const flippedCards = [...document.querySelectorAll('.flipped')];
 shuffle(idArray);
 
 cards.forEach((card, i) => {
-  //handleClick ny funktion
+  //handleClick ny funktion längre upp.
   card.addEventListener('click', handleClick);
-  const flippedCards = [...document.querySelectorAll('.flipped')];
+  let randomNumber = idArray[i];
 
-
-  let randomNumbers = idArray[i];
-
-  let randomImage = images[randomNumbers];
+  let randomImage = images[randomNumber];
   flippedCards[i].setAttribute('src', randomImage.image);
+  card.dataset.id = randomNumber;
 });
