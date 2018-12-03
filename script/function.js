@@ -1,3 +1,4 @@
+//shuffel card
 function shuffle(array) {
   let currentIndex = array.length,
     temporaryValue, randomIndex;
@@ -26,13 +27,14 @@ function handleClick() {
   first.dataset.id === second.dataset.id ? match() : noMatch();
 }
 
-
+//if its a match, stay
 function match() {
   first.removeEventListener('click', handleClick);
   second.removeEventListener('click', handleClick);
   clear();
 }
 
+//if not a match, flip card
 function noMatch() {
   disable = true;
   setTimeout(() => {
