@@ -12,7 +12,6 @@ function createCards(array, i) {
   </div> `
 }
 
-
 //shuffel card
 function shuffle(array) {
   let currentIndex = array.length,
@@ -47,7 +46,6 @@ function match() {
   first.removeEventListener('click', handleClick);
   second.removeEventListener('click', handleClick);
   clear();
-
 }
 
 //if not a match, flip card
@@ -60,32 +58,35 @@ function noMatch() {
   }, 800);
 }
 
-function clear() {
-  first = null;
-  second = null;
-  isFlipped = false;
-  disable = false;
-}
-
 
 function reload() {
   cards.forEach((card, i) => {
     card.addEventListener('click', handleClick);
     let randomNumber = idArray[i];
     let randomImage = images[randomNumber];
+    card.dataset.id = randomNumber
     flippedCards[i].setAttribute('src', randomImage.image);
-    card.dataset.id = randomNumber;
-
-
   });
 }
+
+
+function clear() {
+  isFlipped = false;
+  disable = false;
+  first = null;
+  second = null;
+}
+
+
 
 function restartGame() {
   cards.forEach((card) => {
     card.classList.remove('flip');
     card.addEventListener('click', handleClick);
+
     shuffle(idArray);
     reload();
     clear();
   })
+
 }
